@@ -1,0 +1,7 @@
+<form [formGroup]="form">
+
+    <label for="username">Username</label>
+    <input class="form-control" formControlName="username" type="text" placeholder="Enter username..." name="username" [(ngModel)]="username" (keyup)="searchuser()" />
+    <my-control-messages [control]="form.controls.username"></my-control-messages>
+
+</form>

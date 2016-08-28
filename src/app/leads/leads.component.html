@@ -1,0 +1,9 @@
+<form>
+    <input class="form-control" type="text" placeholder="Enter a username..." name="username" [(ngModel)]="username" (keyup)="search()">
+</form>
+
+<div *ngIf="user && username.length > 0">
+    <div *ngFor="let lead of user">
+        <h4>{{lead | json}}</h4>
+    </div>
+</div>
