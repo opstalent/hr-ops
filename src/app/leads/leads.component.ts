@@ -11,17 +11,17 @@ import 'rxjs/add/operator/map';
 
 export class LeadsComponent implements OnInit { 
 
-  private username: string;
-  private user;
+  private query: string;
+  private leads;
   
   constructor(private leadService: LeadService) {
-     this.user = null;
+     this.leads = null;
   }
 
   search() {
-    this.leadService.updateUser(this.username);
-    if (this.username.length > 3) {    
-      this.leadService.searchUser() .subscribe(user => this.user = user);
+    this.leadService.updateUser(this.query);
+    if (this.query.length > 2) {    
+      this.leadService.searchUser() .subscribe(leads => this.leads = leads);
     }
   }
   

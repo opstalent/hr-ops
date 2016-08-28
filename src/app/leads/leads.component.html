@@ -1,9 +1,23 @@
-<form>
-    <input class="form-control" type="text" placeholder="Enter a username..." name="username" [(ngModel)]="username" (keyup)="search()">
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <form>
+                <input class="form-control" type="text" placeholder="Enter a username, skills..." name="query" [(ngModel)]="query" (keyup)="search()" />
+            </form>
 
-<div *ngIf="user && username.length > 0">
-    <div *ngFor="let lead of user">
-        <h4>{{lead | json}}</h4>
+            <div *ngIf="leads && query.length > 0">
+                <h3 class="pull-right">Found: {{ leads.length }}</h3>
+                <div class="clearfix"></div>
+
+                <div *ngFor="let lead of leads">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">{{ lead.user }}</h4>
+                            <p class="list-group-item-text">{{ lead.skills }}</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
