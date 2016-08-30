@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div *ngIf="lead">
+                <h2>
+                    <i class="fa fa-user" aria-hidden="true"></i> 
+                    {{ lead.user }}
+                </h2>
+                <p><i class="fa fa-calendar" aria-hidden="true"></i> Date: {{ lead.date }}</p>
+                <p>Lead from: {{ lead.lead_from }}</p>
+                <p><i class="fa fa-list" aria-hidden="true"></i> Skills {{ lead.skills }}</p>
+                <p>Recruitment decision {{ lead.recruitment_decision }}</p>
+                <p>Interview status {{ lead.interview_status }}</p>
+                <p>Decision {{ lead.recruitment_decision }}</p>
+
+
+                <a href="{{ lead.source }}" target="_blank"><i class="fa fa-file-pdf-o fa-3x" aria-hidden="true"></i></a>
+
+            </div>
+        </div>
+    </div>
+</div>

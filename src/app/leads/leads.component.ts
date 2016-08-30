@@ -21,7 +21,7 @@ export class LeadsComponent implements OnInit {
   search() {
     this.leadService.updateUser(this.query);
     if (this.query.length > 2) {    
-      this.leadService.searchUser() .subscribe(leads => this.leads = leads);
+      this.leadService.searchUser().subscribe(leads => this.leads = leads);
     }
   }
   

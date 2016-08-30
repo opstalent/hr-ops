@@ -15,6 +15,10 @@ export class LeadService {
     getLeads() {
         return this.http.get(`${this.tempAddress}/api/v1/leads`);
     }
+
+    getSingleLead(id) {
+        return this.http.get(`${this.tempAddress}/api/v1/leads/${id}`).map(res => res.json());
+    }
     
     saveLead(lead) {
         let headers = new Headers();
@@ -30,7 +34,7 @@ export class LeadService {
     }
     
     deleteLead(id) {
-        return this.http.delete(`http://localhost:3000/api/v1/leads/${id}`);
+        return this.http.delete(`${this.tempAddress}/api/v1/leads/${id}`);
     }
 
      updateUser(username: string) {

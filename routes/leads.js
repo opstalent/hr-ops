@@ -21,4 +21,16 @@ router.get('/search', function(req, res) {
     });
 });
 
+// Get Single lead
+router.get('/leads/:id', function(req, res, next) {
+    Lead.findById(req.params.id,
+        function(err, lead) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.json(lead);
+            }
+        });
+});
+
 module.exports = router;
