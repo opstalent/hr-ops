@@ -33,4 +33,24 @@ router.get('/leads/:id', function(req, res, next) {
         });
 });
 
+// // Save lead
+router.post('/leads', function(req, res, next) {
+    var lead = req.body;
+    console.log(lead);
+    if (!lead) {
+        res.status(400);
+        res.json({
+            "error": "Invalid Data"
+        });
+    } else {
+        Lead.create(lead, function(err, result) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.json(result);
+            }
+        });
+    }
+}); 
+
 module.exports = router;

@@ -5,8 +5,7 @@ import 'rxjs/add/operator/map';
 @Component({
   selector: 'my-leads',
   templateUrl: 'leads.component.html',
-  styleUrls: ['./leads.component.scss'],
-  providers: [LeadService]
+  styleUrls: ['./leads.component.scss']
 })
 
 export class LeadsComponent implements OnInit { 

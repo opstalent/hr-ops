@@ -7,8 +7,7 @@ import 'rxjs/add/operator/map';
   selector: 'my-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  directives: [FORM_DIRECTIVES],
-  providers: []
+  directives: [FORM_DIRECTIVES]
 })
 
 export class HomeComponent implements OnInit {

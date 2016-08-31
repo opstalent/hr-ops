@@ -1,4 +1,4 @@
-<form [formGroup]="form">
+<form [formGroup]="form" (submit)="create()">
 
     <label for="user">User</label>
     <input class="form-control" formControlName="user" type="text" placeholder="Enter user..." name="user" />
@@ -12,4 +12,5 @@
     <input class="form-control" formControlName="source" type="text" placeholder="Enter source..." name="source" />
     <my-control-messages [control]="form.controls.source"></my-control-messages>
 
+    <button type="submit" [disabled]="!form.valid" class="btn btn-primary pull-right">Add</button>
 </form>

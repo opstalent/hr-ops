@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Http, Headers} from '@angular/http';
+import {Http, Headers, Response} from '@angular/http';
+import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -20,11 +21,12 @@ export class LeadService {
         return this.http.get(`${this.tempAddress}/api/v1/leads/${id}`).map(res => res.json());
     }
     
-    saveLead(lead) {
+    //Observable<Lead>
+    createLead(lead) {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
         return this.http.post(`${this.tempAddress}/api/v1/leads`, JSON.stringify(lead), {headers: headers})
-            .map(res => res.json());
+        .map((res: Response) => res.json());
     }
     
     updateLead(lead) {

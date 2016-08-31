@@ -6,6 +6,7 @@ import {
 }                                   from '@angular/forms';
 
 import { ControlMessagesComponent } from '../control-messages/control-messages.component';
+import { LeadService } from '../services/lead.service';
 
 @Component({
   selector: 'my-add-form',
@@ -13,11 +14,11 @@ import { ControlMessagesComponent } from '../control-messages/control-messages.c
   directives: [REACTIVE_FORM_DIRECTIVES, ControlMessagesComponent]
 })
 
-export class SearchFormComponent implements OnInit {
+export class AddFormComponent implements OnInit {
 
   private form: any;
 
-  constructor(private builder: FormBuilder) {}
+  constructor(private builder: FormBuilder, private leadService: LeadService) {}
 
   ngOnInit(): void {
     this.form = this.builder.group({
@@ -27,9 +28,10 @@ export class SearchFormComponent implements OnInit {
     });
   }
 
-  add() {
+  create() {
     if (this.form.dirty && this.form.valid) {
-      alert(`Name: ${this.form.value.email}`);
+        console.log(this.leadService.createLead(this.form.value))
+        this.leadService.createLead(this.form.value);
     }
   }
 }

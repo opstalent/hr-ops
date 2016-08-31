@@ -5,8 +5,7 @@ import { LeadService } from '../services/lead.service';
 @Component({
   selector: 'my-lead',
   templateUrl: 'lead.component.html',
-  styleUrls: ['./lead.component.scss'],
-  providers: [LeadService]
+  styleUrls: ['./lead.component.scss']
 })
 
 export class LeadComponent implements OnInit { 
@@ -19,7 +18,7 @@ export class LeadComponent implements OnInit {
     let id = this.route.snapshot.params.id;
     this.leadService.getSingleLead(id)
     .subscribe(lead => {
-      this.lead = lead
+      this.lead = lead;
     });
   }
 
