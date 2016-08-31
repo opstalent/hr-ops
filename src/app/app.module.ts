@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LeadComponent } from './lead/lead.component';
 import { LeadsComponent } from './leads/leads.component';
+import { AddComponent } from './add/add.component';
 
 import { LeadService } from './services/lead.service';
 
@@ -23,7 +24,8 @@ import { routing } from './app.routing';
     AppComponent,
     HomeComponent,
     LeadComponent,
-    LeadsComponent
+    LeadsComponent,
+    AddComponent
   ],
   providers: [
     LeadService

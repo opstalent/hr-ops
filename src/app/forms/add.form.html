@@ -1,0 +1,15 @@
+<form [formGroup]="form">
+
+    <label for="user">User</label>
+    <input class="form-control" formControlName="user" type="text" placeholder="Enter user..." name="user" />
+    <my-control-messages [control]="form.controls.user"></my-control-messages>
+
+    <label for="skills">Skills</label>
+    <input class="form-control" formControlName="skills" type="text" placeholder="Enter skills..." name="skills" />
+    <my-control-messages [control]="form.controls.skills"></my-control-messages>
+
+    <label for="source">CV</label>
+    <input class="form-control" formControlName="source" type="text" placeholder="Enter source..." name="source" />
+    <my-control-messages [control]="form.controls.source"></my-control-messages>
+
+</form>

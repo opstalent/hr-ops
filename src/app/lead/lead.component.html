@@ -2,6 +2,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div *ngIf="lead">
+                {{lead | json}}
                 <h2>
                     <i class="fa fa-user" aria-hidden="true"></i> 
                     {{ lead.user }}
