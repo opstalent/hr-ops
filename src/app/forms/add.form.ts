@@ -24,13 +24,30 @@ export class AddFormComponent implements OnInit {
     this.form = this.builder.group({
       'user': ['', Validators.required],
       'skills': ['', Validators.required],
-      'source': ['', Validators.required]
+      'source': ['', Validators.required],
+      'assigned': ['', ],
+      'bookmark': ['', ],
+      'comment': ['', ],
+      'contact_date': ['', Validators.required],
+      'contact_result': ['', Validators.required],
+      'date': ['', ],
+      'decision': ['', ],
+      'decision_date': ['', ],
+      'future_projects_decision': ['', ],
+      'interview_date': ['', ],
+      'lead_from': ['', ],
+      'overall': ['', ],
+      'reason': ['', ],
+      'recruitment_decision': ['', ],
+      'responce_till': ['', ],
+      'second_contact': ['', ],
+      'sent': ['', ],
+      'technicial_veryfication': ['', ]
     });
   }
 
   create() {
     if (this.form.dirty && this.form.valid) {
-        console.log(this.leadService.createLead(this.form.value))
         this.leadService.createLead(this.form.value);
     }
   }

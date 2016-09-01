@@ -7,6 +7,7 @@ import 'rxjs/add/operator/map';
 export class LeadService {
 
     private username: string;
+    leads;
     private tempAddress: string = 'http://localhost:3000';
 
     constructor(public http: Http) {
@@ -25,8 +26,8 @@ export class LeadService {
     createLead(lead) {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.post(`${this.tempAddress}/api/v1/leads`, JSON.stringify(lead), {headers: headers})
-        .map((res: Response) => res.json());
+        this.http.post(`${this.tempAddress}/api/v1/leads`, JSON.stringify(lead), {headers: headers})
+        .subscribe(res => this.leads = res.json());
     }
     
     updateLead(lead) {

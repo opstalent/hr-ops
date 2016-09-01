@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
+import { HttpModule, HTTP_PROVIDERS} from '@angular/http';
 import { FormsModule, FormBuilder } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -28,6 +28,7 @@ import { routing } from './app.routing';
     AddComponent
   ],
   providers: [
+    HTTP_PROVIDERS,
     FormBuilder,
     LeadService
   ],

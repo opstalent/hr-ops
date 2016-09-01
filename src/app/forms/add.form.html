@@ -1,16 +1,99 @@
 <form [formGroup]="form" (submit)="create()">
 
-    <label for="user">User</label>
-    <input class="form-control" formControlName="user" type="text" placeholder="Enter user..." name="user" />
-    <my-control-messages [control]="form.controls.user"></my-control-messages>
+    <div class="row">
+        <div class="col-lg-6">
+            <label for="user">User</label>
+            <input class="form-control" formControlName="user" type="text" placeholder="Enter user..." name="user" />
+            <my-control-messages [control]="form.controls.user"></my-control-messages>
 
-    <label for="skills">Skills</label>
-    <input class="form-control" formControlName="skills" type="text" placeholder="Enter skills..." name="skills" />
-    <my-control-messages [control]="form.controls.skills"></my-control-messages>
+            <label for="skills">Skills</label>
+            <input class="form-control" formControlName="skills" type="text" placeholder="Enter skills..." name="skills" />
+            <my-control-messages [control]="form.controls.skills"></my-control-messages>
 
-    <label for="source">CV</label>
-    <input class="form-control" formControlName="source" type="text" placeholder="Enter source..." name="source" />
-    <my-control-messages [control]="form.controls.source"></my-control-messages>
+            <label for="source">CV</label>
+            <input class="form-control" formControlName="source" type="text" placeholder="Enter source..." name="source" />
+            <my-control-messages [control]="form.controls.source"></my-control-messages>
 
-    <button type="submit" [disabled]="!form.valid" class="btn btn-primary pull-right">Add</button>
+            <label for="assigned">assigned</label>
+            <input class="form-control" formControlName="assigned" type="text" placeholder="Enter assigned..." name="assigned" />
+            <my-control-messages [control]="form.controls.assigned"></my-control-messages>
+
+            <label for="bookmark">bookmark</label>
+            <input class="form-control" formControlName="bookmark" type="text" placeholder="Enter bookmark..." name="bookmark" />
+            <my-control-messages [control]="form.controls.bookmark"></my-control-messages>
+
+            <label for="assigned">assigned</label>
+            <input class="form-control" formControlName="assigned" type="text" placeholder="Enter assigned..." name="assigned" />
+            <my-control-messages [control]="form.controls.assigned"></my-control-messages>
+
+            <label for="comment">comment</label>
+            <input class="form-control" formControlName="comment" type="text" placeholder="Enter comment..." name="comment" />
+            <my-control-messages [control]="form.controls.comment"></my-control-messages>
+
+            <label for="contact_date">contact_date</label>
+            <input class="form-control" formControlName="contact_date" type="text" placeholder="Enter contact_date..." name="contact_date" />
+            <my-control-messages [control]="form.controls.contact_date"></my-control-messages>
+
+            <label for="contact_result">contact_result</label>
+            <input class="form-control" formControlName="contact_result" type="text" placeholder="Enter contact_result..." name="contact_result" />
+            <my-control-messages [control]="form.controls.contact_result"></my-control-messages>
+
+            <label for="date">date</label>
+            <input class="form-control" formControlName="date" type="text" placeholder="Enter date..." name="date" />
+            <my-control-messages [control]="form.controls.date"></my-control-messages>
+
+            <label for="decision">decision</label>
+            <input class="form-control" formControlName="decision" type="text" placeholder="Enter decision..." name="decision" />
+            <my-control-messages [control]="form.controls.decision"></my-control-messages>
+
+            <label for="future_projects_decision">future_projects_decision</label>
+            <input class="form-control" formControlName="future_projects_decision" type="text" placeholder="Enter future_projects_decision..." name="future_projects_decision" />
+            <my-control-messages [control]="form.controls.future_projects_decision"></my-control-messages>
+
+            <label for="interview_date">interview_date</label>
+            <input class="form-control" formControlName="interview_date" type="text" placeholder="Enter interview_date..." name="interview_date" />
+            <my-control-messages [control]="form.controls.interview_date"></my-control-messages>
+        </div>
+        
+        <div class="col-lg-6">
+            <label for="lead_from">lead_from</label>
+            <input class="form-control" formControlName="lead_from" type="text" placeholder="Enter lead_from..." name="lead_from" />
+            <my-control-messages [control]="form.controls.lead_from"></my-control-messages>
+
+            <label for="overall">overall</label>
+            <input class="form-control" formControlName="overall" type="text" placeholder="Enter overall..." name="overall" />
+            <my-control-messages [control]="form.controls.overall"></my-control-messages>
+
+            <label for="reason">reason</label>
+            <input class="form-control" formControlName="reason" type="text" placeholder="Enter reason..." name="reason" />
+            <my-control-messages [control]="form.controls.reason"></my-control-messages>
+
+            <label for="decision_date">decision_date</label>
+            <input class="form-control" formControlName="decision_date" type="text" placeholder="Enter decision_date..." name="decision_date" />
+            <my-control-messages [control]="form.controls.decision_date"></my-control-messages>
+
+            <label for="recruitment_decision">recruitment_decision</label>
+            <input class="form-control" formControlName="recruitment_decision" type="text" placeholder="Enter recruitment_decision..." name="recruitment_decision" />
+            <my-control-messages [control]="form.controls.recruitment_decision"></my-control-messages>
+
+            <label for="responce_till">responce_till</label>
+            <input class="form-control" formControlName="responce_till" type="text" placeholder="Enter responce_till..." name="responce_till" />
+            <my-control-messages [control]="form.controls.responce_till"></my-control-messages>
+
+            <label for="second_contact">second_contact</label>
+            <input class="form-control" formControlName="second_contact" type="text" placeholder="Enter second_contact..." name="second_contact" />
+            <my-control-messages [control]="form.controls.second_contact"></my-control-messages>
+
+            <label for="sent">sent</label>
+            <input class="form-control" formControlName="sent" type="text" placeholder="Enter sent..." name="sent" />
+            <my-control-messages [control]="form.controls.sent"></my-control-messages>
+
+            <label for="technicial_veryfication">technicial_veryfication</label>
+            <input class="form-control" formControlName="technicial_veryfication" type="text" placeholder="Enter technicial_veryfication..." name="technicial_veryfication" />
+            <my-control-messages [control]="form.controls.technicial_veryfication"></my-control-messages>
+
+            <button type="submit" [disabled]="!form.valid" class="btn btn-primary pull-right">Add</button>
+        </div>
+
+    </div>
 </form>

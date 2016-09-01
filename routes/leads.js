@@ -1,10 +1,37 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-
+var timestamps = require('mongoose-timestamp');
 mongoose.connect('mongodb://localhost:27017/hr-ops');
 
-var Lead = mongoose.model('Lead', { user: String, skills: String });
+var LeadSchema = mongoose.Schema({
+    user: String,
+    skills: String,
+    assigned: String,
+    bookmark: String,
+    comment: String,
+    contact_date: String,
+    contact_result: String,
+    date: String,
+    decision: String,
+    decision_date: String,
+    future_projects_decision: String,
+    interview_date: String,
+    lead_from: String,
+    overall: String,
+    reason: String,
+    recruitment_decision: String,
+    responce_till: String,
+    second_contact: String,
+    sent: String,
+    source: String,
+    technical_verification: String,
+    name: String
+});
+
+LeadSchema.plugin(timestamps);
+mongoose.model('Lead', LeadSchema);
+var Lead = mongoose.model('Lead', LeadSchema)
 
 router.get('/search', function(req, res) {
     var query = req.query.query;
