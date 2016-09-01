@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { LeadComponent } from './lead/lead.component';
 import { LeadsComponent } from './leads/leads.component';
 import { AddComponent } from './add/add.component';
+import { UpdateComponent } from './update/update.component';
 
 import { LeadService } from './services/lead.service';
 
@@ -25,7 +26,8 @@ import { routing } from './app.routing';
     HomeComponent,
     LeadComponent,
     LeadsComponent,
-    AddComponent
+    AddComponent,
+    UpdateComponent
   ],
   providers: [
     HTTP_PROVIDERS,

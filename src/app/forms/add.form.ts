@@ -1,4 +1,4 @@
-import { Component, OnInit }        from '@angular/core';
+import { Component, OnInit, Input }  from '@angular/core';
 import {
   REACTIVE_FORM_DIRECTIVES,
   FormBuilder,
@@ -17,10 +17,14 @@ import { LeadService } from '../services/lead.service';
 export class AddFormComponent implements OnInit {
 
   private form: any;
+  @Input() lead;
 
   constructor(private builder: FormBuilder, private leadService: LeadService) {}
 
   ngOnInit(): void {
+  // this.form.value = this.lead;
+  console.log(this.lead, 'asdasd')
+    
     this.form = this.builder.group({
       'user': ['', Validators.required],
       'skills': ['', Validators.required],
