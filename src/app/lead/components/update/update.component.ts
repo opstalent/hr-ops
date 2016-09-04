@@ -1,13 +1,11 @@
 import { Component, OnInit }  from '@angular/core';
 import { ActivatedRoute }     from '@angular/router';
-import { LeadService }        from '../services/lead.service';
-import { AddFormComponent }   from '../forms/add.form';
+import { LeadService }        from '../../lead.service';
 
 @Component({
   selector: 'my-update',
   templateUrl: 'update.component.html',
-  styleUrls: ['./update.component.scss'],
-  directives: [AddFormComponent]
+  styleUrls: ['./update.component.scss']
 })
 
 export class UpdateComponent implements OnInit { 

@@ -1,17 +1,9 @@
-import { Component } from '@angular/core';
-import {HomeComponent} from './home/home.component';
-import {LeadService} from './services/lead.service';
-import {HTTP_PROVIDERS} from '@angular/http';
-
+import {Component} from '@angular/core';
 import '../style/app.scss';
 
 @Component({
-  selector: 'my-app',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  directives: [HomeComponent],
-  providers: [HTTP_PROVIDERS, LeadService]
+    selector: 'my-app',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-
-}
+export class AppComponent {}

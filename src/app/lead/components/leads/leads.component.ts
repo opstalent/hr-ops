@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {LeadService} from '../services/lead.service';
+import {LeadService} from '../../lead.service';
 import 'rxjs/add/operator/map';
 
 @Component({

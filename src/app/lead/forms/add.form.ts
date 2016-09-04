@@ -1,17 +1,11 @@
 import { Component, OnInit, Input }  from '@angular/core';
-import {
-  REACTIVE_FORM_DIRECTIVES,
-  FormBuilder,
-  Validators
-}                                   from '@angular/forms';
+import { FormBuilder, Validators }   from '@angular/forms';
 
-import { ControlMessagesComponent } from '../control-messages/control-messages.component';
-import { LeadService } from '../services/lead.service';
+import { LeadService } from '../lead.service';
 
 @Component({
   selector: 'my-add-form',
-  templateUrl: './add.form.html',
-  directives: [REACTIVE_FORM_DIRECTIVES, ControlMessagesComponent]
+  templateUrl: './add.form.html'
 })
 
 export class AddFormComponent implements OnInit {

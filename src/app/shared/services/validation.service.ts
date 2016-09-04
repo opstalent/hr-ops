@@ -1,15 +1,22 @@
+import {INT_TYPE} from "@angular/compiler/src/output/output_ast";
 export class ValidationService {
 
     static getValidatorErrorMessage(validatorName: string, validatorValue?: any) {
         let config = {
             'required': 'Required',
-            'invalidCreditCard': 'Is invalid credit card number',
+            'invalidCreditCard': 'Invalid credit card number',
             'invalidEmailAddress': 'Invalid email address',
             'invalidPhone': 'Invalid phone number',
-            'invalidPassword': 'Invalid password. Password must be at least 8 characters long, 1 numeric character, 1 lowercase letter, 1 uppercase, 1 special character.',
+            'invalidPassword': 'Password must be at least 8 characters long, 1 numeric character, 1 lowercase letter, 1 uppercase, 1 special character.',
             'minlength': `Minimum length ${validatorValue.requiredLength}`,
             'invalidPostcode': 'Invalid postcode',
-            'invalidVatNumber': 'Invalid VAT number'
+            'invalidVatNumber': 'Invalid VAT number',
+            'invalidName': 'Name must be longer than 2 characters.',
+            'invalidSurname': 'Surname must be at least 2 characters long.',
+            'invalidAddress': 'Only alphanumeric characters allowed.',
+            'invalidInteger': 'This is not valid Integer',
+            'invalidFloat': 'This is not valid Float',
+            'invalidPercentNumber': 'Only integers between 0 and 100'
         };
 
         return config[validatorName];
@@ -57,7 +64,46 @@ export class ValidationService {
             return {'invalidPostcode': true};
         }
     }
-
+    
+    /**
+     * Longer than 2 characters, alpha characters only
+     * @param control
+     * @returns {any}
+     */
+    static nameValidator(control) {
+        if (control.value.match(/^(([a-zA-Z ]){3,})$/)) {
+            return null;
+        } else {
+            return {'invalidName': true};
+        }
+    }
+    
+    /**
+     * At least 2 characters long, alpha characters only
+     * @param control
+     * @returns {any}
+     */
+    static surnameValidator(control) {
+        if (control.value.match(/^(([a-zA-Z ]){2,})$/)) {
+            return null;
+        } else {
+            return {'invalidSurname': true};
+        }
+    }
+    
+    /**
+     * Alpha characters only
+     * @param control
+     * @returns {any}
+     */
+    static addressValidator(control) {
+        if (control.value.match(/^[a-z0-9, ]+$/i)) {
+            return null;
+        } else {
+            return {'invalidAddress': true};
+        }
+    }
+    
     /**
      * (123) 456-7890
      * 123-456-7890
@@ -115,6 +161,30 @@ export class ValidationService {
             return null;
         } else {
             return {'invalidVatNumber': true};
+        }
+    }
+
+    static integerValidator(control) {
+        if (parseInt(control.value) === control.value) {
+            return null;
+        } else {
+            return {'invalidInteger': true};
+        }
+    }
+
+    static floatValidator(control) {
+        if (!isNaN(parseFloat(control.value))) {
+            return null;
+        } else {
+            return {'invalidFloat': true};
+        }
+    }
+
+    static percentNumber(control) {
+        if (control.value >= 0 && control.value <= 100) {
+            return null;
+        } else {
+            return {'invalidPercentNumber': true};
         }
     }
 }

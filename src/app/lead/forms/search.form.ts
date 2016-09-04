@@ -1,16 +1,10 @@
 import { Component, OnInit }        from '@angular/core';
-import {
-  REACTIVE_FORM_DIRECTIVES,
-  FormBuilder,
-  Validators
-}                                   from '@angular/forms';
+import { FormBuilder, Validators }  from '@angular/forms';
 
-import { ControlMessagesComponent } from '../control-messages/control-messages.component';
 
 @Component({
   selector: 'my-search-form',
-  templateUrl: './search.form.html',
-  directives: [REACTIVE_FORM_DIRECTIVES, ControlMessagesComponent]
+  templateUrl: './search.form.html'
 })
 
 export class SearchFormComponent implements OnInit {

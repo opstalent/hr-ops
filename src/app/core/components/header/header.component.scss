@@ -1,0 +1,30 @@
+nav {
+  box-shadow: 0 1px 4px #9b9b9b;
+  z-index: 1000;
+}
+.navbar {
+    margin: 0;
+}
+.navbar-nav {
+  margin-top: 15px;
+  & > li > a {
+    color: #777;
+    line-height: 35px;
+    padding: 0 15px;
+    background: none;
+    cursor: pointer;
+    &:hover {
+      border-bottom: 3px solid #ff4f00;
+    }
+  }
+}
+// .navbar-header {
+//   padding: 10px;
+// }
+// .navbar-brand {
+//   display: block;
+//   width: 130px;
+//   height: 46px;
+//   text-indent: -9999px;
+//   background: url('http://develop.name/ops/wp-content/themes/ops/images/logo.png');
+// }
