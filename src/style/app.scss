@@ -1,5 +1,4 @@
 @import 'vars';
-
 body {
     color: black;
 }
@@ -31,10 +30,10 @@ button[disabled] {
 
 .form-custom {
     position: relative;
-    height: 45px;
+    height: 35px;
     background-color: #eceff4;
     border: 1px solid #cad3df;
-    border-radius: 5px;
+    border-radius: 0;
     color: #000000;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 15px;
@@ -45,7 +44,6 @@ button[disabled] {
 
 .input-wrapper {
     position: relative;
-
     span {
         position: absolute;
         top: 1px;
@@ -53,7 +51,7 @@ button[disabled] {
         content: "*";
         color: #8493a8;
         z-index: 999;
-    }   
+    }
 }
 
 .btn-custom {
@@ -81,6 +79,6 @@ button[disabled] {
     font-size: 12px;
 }
 
-.mandatory{
+.mandatory {
     font-size: 11px;
 }

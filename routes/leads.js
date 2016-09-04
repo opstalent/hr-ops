@@ -38,7 +38,7 @@ router.get('/search', function(req, res) {
     var regex = new RegExp(query, "i");
 
     Lead.find({
-        $or: [{ 'user': regex }, { 'skills': regex }]
+        $or: [{ 'user': regex }, { 'skills': regex }, { 'overall': regex }, { 'interview_date': regex }]
     }, function(err, leads) {
         if (err) {
             res.send(err);
@@ -79,5 +79,19 @@ router.post('/leads', function(req, res, next) {
         });
     }
 }); 
+
+// // Update lead
+router.put('/leads/:id', function(req, res, next) {
+    var lead = req.body;
+    console.log(lead)
+    Lead.update({ _id: req.params.id }, lead, {}, function(err, result) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.json(result);
+        }
+    });
+
+});
 
 module.exports = router;

@@ -14,3 +14,4 @@ import 'rxjs';
 // Other vendors for example jQuery, Lodash or Bootstrap
 import 'jquery';
 import 'bootstrap-loader';
+import 'moment';
