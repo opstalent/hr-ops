@@ -27,7 +27,7 @@ export class LeadService {
 //   }
     
     getLeads() {
-        return this.http.get(`${this.tempAddress}/api/v1/leads`);
+        return this.http.get(`${this.tempAddress}/api/v1/leads`).map(res => res.json());
     }
 
     getSingleLead(id) {

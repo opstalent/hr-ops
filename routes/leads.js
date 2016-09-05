@@ -48,6 +48,17 @@ router.get('/search', function(req, res) {
     });
 });
 
+// Get All leads
+router.get('/leads', function(req, res, next) {
+    Lead.find(function(err, leads) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.json(leads);
+        }
+    });
+});
+
 // Get Single lead
 router.get('/leads/:id', function(req, res, next) {
     Lead.findById(req.params.id,

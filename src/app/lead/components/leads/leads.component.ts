@@ -25,8 +25,10 @@ export class LeadsComponent implements OnInit {
   }
   
   ngOnInit() {
-
+    this.leadService.getLeads().subscribe(leads => {
+      this.leads = leads
+      console.log(this.leads)
+    });
   }
-  
   
 }

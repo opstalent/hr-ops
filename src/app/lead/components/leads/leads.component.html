@@ -5,7 +5,7 @@
                 <input class="form-control" type="text" placeholder="Enter a username, skills..." name="query" [(ngModel)]="query" (keyup)="search()" />
             </form>
 
-            <div *ngIf="leads && query.length > 0">
+            <div *ngIf="leads">
                 <h3 class="pull-right">Found: {{ leads.length}}</h3>
                 <div class="clearfix"></div>
 

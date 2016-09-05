@@ -24,10 +24,10 @@ export class AddFormComponent implements OnInit {
     this.id = this.route.snapshot.params.id;
     this.currentDate = moment().format('YYYY-MM-DD');
 
-    // this.leadService.getSingleLead(this.id)
-    //   .subscribe(lead => {
-    //     this.form.patchValue(lead)
-    // });
+    this.leadService.getSingleLead(this.id)
+      .subscribe(lead => {
+        this.form.patchValue(lead)
+    });
 
     this.form = this.builder.group({
       'user': ['', Validators.required],
@@ -63,10 +63,5 @@ export class AddFormComponent implements OnInit {
       }
     }
   }
-
-   updateVehicle($event) {
-     console.log($event)
-        this.form.value.overall = $event;
-    }
 
 }
